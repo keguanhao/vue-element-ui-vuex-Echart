@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="demo">
+        
+    </div>
+</body>
+<script>
+    //Objcet.assing实现浅拷贝
+    (function() {
+        var obj = { a: 2, b: 3 };
+        var obj1 = { name: 'ke', sex: "femal" };
+        const newObj = Object.assign({}, obj, obj1);
+        console.log(newObj)
+    })();
+    
+    //结构赋值
+    (function() {
+            var jiegou = { name: "wenb", sex: "male" };
+            const { name, sex } = jiegou;
+            console.log(name)
+    })();
+    
+    //展开运算符
+    (function(){
+        var color = ['red', 'green', 'blue'];
+        var colors = [...color, 'yellow', 'white'];
+        console.log(colors)
+    })();
+   
+    //获取数组或者对象后面几项
+    (function() {
+        var num = [2, 4, 3, 5];
+        var [frist, ...arr] = num;
+        console.log(arr)
+        var obj = {name: "chen",sex: "femal",age: 33};
+        const {name,...newObj} = obj;
+        console.log(newObj) 
+    })();
+   //迭代器
+   (function() {
+      function *createdNum() {
+          yield 2;
+          yield 5;
+          yield 7;
+      }
+      let iterator = createdNum();
+      console.log(iterator.next().value);
+      console.log(iterator.next().value);
+      console.log(iterator.next().value);
+   })();
+   //promise的使用方法
+   (function() {
+      let ajax = function(num) {
+          return new Promise(function(reslove,reject) {
+               if(num > 4) {
+                   reslove(num + 5)
+                   return
+               }
+               throw new Error("抛出异常")
+          })
+      }
+      ajax(2).then(function(res) {
+          console.log(res)
+      }).catch(function(err) {
+          console.log(err)
+      })
+   })();
+   (function() {
+     const obj = {
+         name: 'ke',
+         sex: 'femal'
+     }
+     const{name,sex} = obj;
+     console.log(name)
+   })();
+   (function() {
+      var url = 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/5922e8b5bd83a1c0a7a48a5af6b5782a_259_194.jpg';
+      var url1 = 'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/47d4d7de333622ac5a8f9ddd2c8ed3fd_78_59.jpg';
+      
+   })()
+</script>
+</html>

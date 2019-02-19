@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //正则表达式训练
+        //字符串去重
+        var str = "aaasssddd";
+        var reg = /(\w)\1+/g;
+        var res = str.replace(reg, '$1');
+        console.log(res);
+        //完成小驼峰
+        var str1 = 'the-first-name';
+        var reg1 = /-/g;
+        var res1 = str1.replace(reg1, '');
+        console.log(res1)
+    </script>
+</body>
+
+</html>

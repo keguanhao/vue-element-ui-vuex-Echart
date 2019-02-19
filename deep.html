@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function deep(target) {
+            var obj = {};
+            for (var props in target) {
+                if (typeof target[props] != 'object') {
+                    obj[props] = target[props]
+                } else {
+                    // obj[props] = {};
+                    obj[props] = deep(target[props])
+
+                }
+            }
+            return obj
+        }
+        var obj1 = {
+            name: 'wenbing', age: 22, people: {
+                width: 34,
+                height: 'hh'
+            }
+        }
+        var obj2 = deep(obj1);
+        obj1.name = 'keguanhao'
+        console.log(obj2)
+    </script>
+</body>
+
+</html>

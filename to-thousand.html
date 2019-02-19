@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 方法一
+        // function toThousands(num) {
+        //     var result = [ ], counter = 0;
+        //     num = (num || 0).toString().split('');
+        //     console.log(num)
+        //     for (var i = num.length - 1; i >= 0; i--) {
+        //         counter++;
+        //         result.unshift(num[i]);
+        //         if (!(counter % 3) && i != 0) { result.unshift(','); }
+        //     }
+        //     return result.join('');
+        // }
+        // console.log(toThousands())
+        function toThousands(num) {
+            var result = [],count = 0;
+            num = (num || 0).toString().split('');
+            for(var i = num.length - 1; i >= 0; i--) {
+                count ++;
+                result.unshift(num[i]);
+                if(!(count % 3) && i != 0) {
+                    result.unshift(',')
+                }
+            }
+            return result.join('');
+        }
+       console.log(toThousands(543534534543))
+    </script>
+</body>
+</html>
